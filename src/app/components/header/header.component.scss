@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex: 0 0 70px;
+}
+
+header {
+    width: 100%;
+    .container {
+        img {
+            height: auto;
+            max-height: 48px;
+            margin: 10px 0 10px;
+        }
+    }
+}
