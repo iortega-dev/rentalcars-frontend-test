@@ -1,0 +1,18 @@
+.si-container {
+    display: flex;
+    flex-direction: column;
+    label {
+        color: #444;
+        font-size: 0.875em;
+    }
+    input {
+        padding: 12px 8% 12px 2%;
+        border: 1px solid #a9a9a9;
+        font-size: 0.875em;
+        line-height: 15px;
+        &:focus {
+            outline-color: rgb(77, 144, 254);
+            border-color: rgb(77, 144, 254);
+        }
+    }
+}

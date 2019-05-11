@@ -1,0 +1,25 @@
+{
+    "APP": {
+        "TITLE": "Car Hire with discount rates from Rentalcars.com"
+    },
+    "HOMEPAGE": {
+        "HERO": {
+            "TITLE": "Car Hire – Search, Compare & Save",
+            "SUBTITLE": "Compare 900 companies at over 60,000 locations. Best price guaranteed"
+        },
+        "SEARCH_WIDGET": {
+            "TITLE": "Let’s find your ideal car"
+        },
+        "PROVIDERS_WIDGET": {
+            "TITLE": "Rentalcars.com connects you to the biggest brands in car hire."
+        }
+    },
+    "SEARCH_FORM": {
+        "SEARCH_BTN": "Search"
+    },
+    "SEARCH_INPUT": {
+        "LABEL": "Pick-up Location",
+        "PLACEHOLDER": "city, airport, station, region, district…",
+        "NO_RESULTS": "No results found"
+    }
+}

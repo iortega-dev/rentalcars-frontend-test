@@ -46,6 +46,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/bootstrap-reboot.css",
+              "src/assets/css/bootstrap-grid.css",
               "src/styles.scss"
             ],
             "scripts": [],
