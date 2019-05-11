@@ -1,0 +1,17 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+app-search-input {
+    display: block;
+    margin-bottom: 1em;
+}
+
+@media (min-width: 576px) {
+    button {
+        &.btn-primary {
+            align-self: flex-end;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+<ng-container [formGroup]="searchForm">
+    <app-search-input
+        formControlName="search"
+        [label]="'SEARCH_INPUT.LABEL' | translate"
+        [placeholder]="'SEARCH_INPUT.PLACEHOLDER' | translate"
+        ></app-search-input>
+    <button type="submit" class="btn-primary" translate>SEARCH_FORM.SEARCH_BTN</button>
+</ng-container>
