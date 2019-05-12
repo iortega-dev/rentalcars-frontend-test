@@ -1,6 +1,7 @@
 .si-container {
     display: flex;
     flex-direction: column;
+    position: relative;
     label {
         color: #444;
         font-size: 0.875em;
@@ -15,4 +16,14 @@
             border-color: rgb(77, 144, 254);
         }
     }
+    img {
+        &.load-spinner {
+            cursor: none;
+            position: absolute;
+            height: 27px;
+            right: 7px;
+            bottom: 7px;
+        }
+    }
+    
 }

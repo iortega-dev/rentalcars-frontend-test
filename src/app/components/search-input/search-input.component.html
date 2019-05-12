@@ -1,6 +1,6 @@
 <div class="si-container">
   <label for="{{formControlName + '-control'}}">{{label}}</label>
-  <input id="{{formControlName + '-control'}}" type="text" placeholder="{{placeholder}}" autocomplete="off">
-  <img *ngIf="false" src="/assets/img/preloader64.gif" alt="loading">
+  <input id="{{formControlName + '-control'}}" type="text" placeholder="{{placeholder}}" autocomplete="off" [value]="value" [disabled]="isDisabled" (input)="onInput($event.target.value)">
+  <img *ngIf="loading" class="load-spinner" src="/assets/img/preloader64.gif" alt="loading">
   <div *ngIf="false">ERRORCONTROL</div>
 </div>
