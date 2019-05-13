@@ -1,0 +1,23 @@
+<div class="result-item" *ngIf="item.bookingId || item.placeKey">
+  <div class="row no-gutters">
+    <div class="col-auto tag-col">
+      <span class="item-tag">
+          {{PlaceTypes[item.placeType]}}
+      </span>
+    </div>
+    <div class="col text-col">
+      <span>{{item.name}} <ng-container *ngIf="item.placeType === 'A'">({{item.iata}})</ng-container></span>
+      <span>{{renderPlacement(item)}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="no-result-item" *ngIf="!item.bookingId && !item.placeKey">
+  <div class="row no-gutters">
+    <div class="col">
+      <span>
+          {{item.name}}
+      </span>
+    </div>
+  </div>
+</div>

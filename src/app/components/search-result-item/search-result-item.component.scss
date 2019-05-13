@@ -1,0 +1,54 @@
+:host {
+    display: block;
+    padding: 10px 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 400;
+    &.valid {
+        cursor: pointer;
+        &:hover {
+            background-color: #dff6ff;
+        }
+    }
+    .result-item {
+        .tag-col {
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.71em;
+            text-align: center;
+            font-weight: bold;
+            span {
+                width: 100%;
+                background-color: salmon;
+                border-radius: 3px;
+            }
+        }
+        .text-col {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding-left: 10px;
+            line-height: 1.2;
+            span {
+                font-size: 0.875em;
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
+                + span {
+                    font-size: 0.815em;
+                    color: grey;
+                }
+            }
+        }
+    }
+    .no-result-item {
+        span {
+            font-style: italic;
+            font-size: 0.875em;
+            color: grey;
+        }
+    }
+}

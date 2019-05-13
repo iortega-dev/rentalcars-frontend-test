@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { SearchService } from 'src/app/services/search.service';
 import { Subject } from 'rxjs';
 import { takeUntil, debounceTime, filter } from 'rxjs/operators';
+import { Results } from 'src/app/models/results';
+import { SearchItem } from 'src/app/models/search-item';
 
 @Component({
   selector: 'app-search-form',
@@ -11,9 +13,10 @@ import { takeUntil, debounceTime, filter } from 'rxjs/operators';
 })
 export class SearchFormComponent implements OnInit {
   searchForm: FormGroup;
+  showLoader = false;
+  searchResults: SearchItem[];
 
   private destroySubject = new Subject();
-  showLoader = false;
 
   constructor(
     private fb: FormBuilder,
@@ -33,10 +36,9 @@ export class SearchFormComponent implements OnInit {
       .valueChanges.pipe(
         takeUntil(this.destroySubject),
         debounceTime(500),
-        filter(value => value.length >= 2)
       )
       .subscribe(val => {
-          this.doSearch(val);
+          val.length >= 2 ? this.doSearch(val) : delete this.searchResults;
       });
   }
 
@@ -44,7 +46,8 @@ export class SearchFormComponent implements OnInit {
     this.showLoader = true;
     this.searchSrv.getSearchResults(numresults, searchterm).subscribe(
       (data) => {
-        console.log(data);
+        const results: Results = data.results;
+        this.searchResults = results.docs;
       },
       (error) => {
         console.log(error);
