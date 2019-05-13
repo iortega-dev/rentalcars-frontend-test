@@ -1,4 +1,7 @@
 :host {
+    height: auto;
+    display: flex;
+    flex-direction: column;
     flex: 1;
     background-image: url("/assets/img/background.jpg");
     background-position: center;
@@ -42,7 +45,7 @@
         }
     }
     .right-widget {
-        margin-top: 15px;
+        margin: 15px 0px;
         background: rgb(255, 255, 255);
         background: rgba(255, 255, 255, 0.9);
         padding: 5%;
@@ -59,6 +62,7 @@
                 justify-content: center;
                 img {
                     &.img-fluid {
+                        width: 100%;
                         max-width: 100%;
                         height: auto;
                     }
@@ -69,3 +73,8 @@
     }
 }
 
+@media (min-width: 576px) {
+    .content {
+        margin-bottom: 250px;
+    }
+}

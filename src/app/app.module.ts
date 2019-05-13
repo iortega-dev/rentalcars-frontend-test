@@ -12,6 +12,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { SearchFormComponent } from './components/search-form/search-form.component';
+import { SearchResultItemComponent } from './components/search-result-item/search-result-item.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -23,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     HomepageComponent,
     SearchInputComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    SearchResultItemComponent
   ],
   imports: [
     BrowserModule,
