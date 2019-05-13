@@ -1,9 +1,14 @@
 <div class="si-container">
   <label for="{{formControlName + '-control'}}">{{label}}</label>
   <div class="input-container">
-    <input id="{{formControlName + '-control'}}" type="text" placeholder="{{placeholder}}" autocomplete="off" [value]="value" [disabled]="isDisabled" (input)="onInput($event.target.value)">
+    <input id="{{formControlName + '-control'}}" type="text" 
+      placeholder="{{placeholder}}" autocomplete="off" 
+      [value]="value" [disabled]="isDisabled" 
+      (input)="onInput($event.target.value)"
+      (blur)="onBlur()"
+      (focus)="onFocus()">
     <img *ngIf="loading" class="load-spinner" src="/assets/img/preloader64.gif" alt="loading">
-    <ul *ngIf="results" class="results-list">
+    <ul *ngIf="results && focused" class="results-list">
       <li *ngFor="let res of results">
         <app-search-result-item [item]="res"></app-search-result-item>
       </li>

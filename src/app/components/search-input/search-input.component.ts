@@ -22,6 +22,7 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   @Input() results: SearchItem[];
 
   value: string;
+  focused: boolean;
   isDisabled: boolean;
   onChange = (_: any) => {};
   onTouch = () => {};
@@ -29,6 +30,14 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onBlur() {
+    this.focused = false;
+  }
+
+  onFocus() {
+    this.focused = true;
   }
 
   onInput(value: string) {
