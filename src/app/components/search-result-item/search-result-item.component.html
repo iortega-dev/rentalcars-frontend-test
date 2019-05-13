@@ -6,7 +6,7 @@
       </span>
     </div>
     <div class="col text-col">
-      <span>{{item.name}} <ng-container *ngIf="item.placeType === 'A'">({{item.iata}})</ng-container></span>
+      <span [innerHTML]="renderName(item)"><ng-container *ngIf="item.placeType === 'A'">({{item.iata}})</ng-container></span>
       <span>{{renderPlacement(item)}}</span>
     </div>
   </div>

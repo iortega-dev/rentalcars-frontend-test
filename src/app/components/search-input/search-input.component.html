@@ -10,7 +10,7 @@
     <img *ngIf="loading" class="load-spinner" src="/assets/img/preloader64.gif" alt="loading">
     <ul *ngIf="results && focused" class="results-list">
       <li *ngFor="let res of results">
-        <app-search-result-item [item]="res"></app-search-result-item>
+        <app-search-result-item [item]="res" [keyword]="value"></app-search-result-item>
       </li>
     </ul>
   </div>

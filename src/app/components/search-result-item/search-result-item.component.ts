@@ -10,6 +10,7 @@ export class SearchResultItemComponent implements OnInit {
 
   isValid: boolean;
   @Input() item: SearchItem;
+  @Input() keyword: string;
   PlaceTypes = PlaceTypes;
 
   @HostBinding('class.valid')
@@ -20,6 +21,13 @@ export class SearchResultItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
+
+  renderName(sItem: SearchItem) {
+    if (sItem.name.includes(this.keyword)) {
+      return '<b>' + this.keyword + '</b>' + sItem.name.split(this.keyword).join('');
+    }
+    return sItem.name;
+  }
 
   renderPlacement(sItem: SearchItem) {
     const contentArray = this.placementContent(sItem).filter(Boolean);
