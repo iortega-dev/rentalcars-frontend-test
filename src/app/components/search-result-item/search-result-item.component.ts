@@ -34,12 +34,14 @@ export class SearchResultItemComponent implements OnInit {
       case 'D': // District
         return [sItem.region, sItem.country];
       case 'G': // Other
+      case 'W': // Country
         return [];
       case 'L': // Area
       case 'P': // Region
+      case 'F': // Region
       case 'Z': // Place
         return [sItem.country];
-      case 'S': // Station<
+      case 'S': // Station
       case 'T': // Station
         return [sItem.city, sItem.region, sItem.country];
     }
@@ -51,8 +53,10 @@ enum PlaceTypes {
   C = 'City',
   D = 'District',
   G = 'Other',
+  W = 'Country',
   L = 'Area',
   P = 'Region',
+  F = 'Region',
   S = 'Station',
   T = 'Station',
   Z = 'Place'

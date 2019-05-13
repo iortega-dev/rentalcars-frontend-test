@@ -1,7 +1,7 @@
 <div class="result-item" *ngIf="item.bookingId || item.placeKey">
   <div class="row no-gutters">
     <div class="col-auto tag-col">
-      <span class="item-tag">
+      <span class="item-tag {{'tag-' +item.placeType}}">
           {{PlaceTypes[item.placeType]}}
       </span>
     </div>
